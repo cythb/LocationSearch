@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 FanAppz. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import <Masonry/Masonry.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "HGLocationSearchViewController.h"

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface HGLocationSearchViewModel : NSObject
