@@ -6,3 +6,6 @@
 
 # TODO
 1. 最近搜索的纪录
+
+#License
+MIT
