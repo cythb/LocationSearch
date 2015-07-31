@@ -31,7 +31,7 @@
         // icon
         _iconView = [[UIImageView alloc] init];
         _iconView.tintColor = [UIColor blackColor];
-        _iconView.image = [UIImage imageNamed:@"LegacyPinDown3Sat"];
+        _iconView.image = [UIImage imageNamed:@"HGLocationSearch.bundle/LegacyPinDown3Sat"];
         [self.contentView addSubview:_iconView];
         [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(_iconView.superview.mas_centerY);
@@ -110,11 +110,11 @@
 - (void)setType:(HGLocationStaticCellType)type {
     _type = type;
     if (_type == HGLocationStaticCellTypeCurrent) {
-        _iconView.image = [[UIImage imageNamed:@"TrackingLocation"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _iconView.image = [[UIImage imageNamed:@"HGLocationSearch.bundle/TrackingLocation"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         _iconView.tintColor = [UIColor blackColor];
         _titleLabel.text = @"Current";
     }else {
-        _iconView.image = [[UIImage imageNamed:@"LegacyPinDown3Sat"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _iconView.image = [[UIImage imageNamed:@"HGLocationSearch.bundle/LegacyPinDown3Sat"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         _iconView.tintColor = [UIColor grayColor];
         _titleLabel.text = nil;
     }

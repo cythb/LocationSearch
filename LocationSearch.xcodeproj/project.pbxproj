@@ -8,17 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2200AA9BCDC415D762811E59 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 136E933EAB2CABEA3796E571 /* libPods.a */; };
-		507E8F1E1B6B16D400FE61AD /* HGLocationSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 507E8F1D1B6B16D400FE61AD /* HGLocationSearchViewModel.m */; };
 		507E904A1B6B4E5B00FE61AD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507E90491B6B4E5B00FE61AD /* MapKit.framework */; };
 		507E904C1B6B55C200FE61AD /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507E904B1B6B55C200FE61AD /* AddressBookUI.framework */; };
 		507E904F1B6B5B1C00FE61AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507E904E1B6B5B1C00FE61AD /* ViewController.m */; };
+		507E90571B6B778600FE61AD /* HGLocationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507E90531B6B778600FE61AD /* HGLocationSearchViewController.m */; };
+		507E90581B6B778600FE61AD /* HGLocationSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 507E90551B6B778600FE61AD /* HGLocationSearchViewModel.m */; };
+		507E90591B6B778600FE61AD /* HGLocationSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 507E90561B6B778600FE61AD /* HGLocationSearch.bundle */; };
 		50ED4C1B1B6A20C00096B30B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ED4C1A1B6A20C00096B30B /* main.m */; };
 		50ED4C1E1B6A20C00096B30B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ED4C1D1B6A20C00096B30B /* AppDelegate.m */; };
 		50ED4C241B6A20C00096B30B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED4C221B6A20C00096B30B /* Main.storyboard */; };
 		50ED4C261B6A20C00096B30B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50ED4C251B6A20C00096B30B /* Images.xcassets */; };
 		50ED4C291B6A20C00096B30B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50ED4C271B6A20C00096B30B /* LaunchScreen.xib */; };
 		50ED4C351B6A20C00096B30B /* LocationSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ED4C341B6A20C00096B30B /* LocationSearchTests.m */; };
-		50ED4C661B6A22720096B30B /* HGLocationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ED4C651B6A22720096B30B /* HGLocationSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +35,15 @@
 /* Begin PBXFileReference section */
 		136E933EAB2CABEA3796E571 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FED9B88296C4720FB6EDE78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		507E8F1C1B6B16D400FE61AD /* HGLocationSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGLocationSearchViewModel.h; sourceTree = "<group>"; };
-		507E8F1D1B6B16D400FE61AD /* HGLocationSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGLocationSearchViewModel.m; sourceTree = "<group>"; };
 		507E90491B6B4E5B00FE61AD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		507E904B1B6B55C200FE61AD /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		507E904D1B6B5B1C00FE61AD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		507E904E1B6B5B1C00FE61AD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		507E90521B6B778600FE61AD /* HGLocationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGLocationSearchViewController.h; sourceTree = "<group>"; };
+		507E90531B6B778600FE61AD /* HGLocationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGLocationSearchViewController.m; sourceTree = "<group>"; };
+		507E90541B6B778600FE61AD /* HGLocationSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGLocationSearchViewModel.h; sourceTree = "<group>"; };
+		507E90551B6B778600FE61AD /* HGLocationSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGLocationSearchViewModel.m; sourceTree = "<group>"; };
+		507E90561B6B778600FE61AD /* HGLocationSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HGLocationSearch.bundle; sourceTree = "<group>"; };
 		50ED4C151B6A20C00096B30B /* LocationSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ED4C191B6A20C00096B30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ED4C1A1B6A20C00096B30B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,8 +55,6 @@
 		50ED4C2E1B6A20C00096B30B /* LocationSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ED4C331B6A20C00096B30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50ED4C341B6A20C00096B30B /* LocationSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationSearchTests.m; sourceTree = "<group>"; };
-		50ED4C641B6A22720096B30B /* HGLocationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGLocationSearchViewController.h; sourceTree = "<group>"; };
-		50ED4C651B6A22720096B30B /* HGLocationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGLocationSearchViewController.m; sourceTree = "<group>"; };
 		9814ED661E61308D99D361E0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,16 +89,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		507E90501B6B5BBD00FE61AD /* HGLocationSearch */ = {
+		507E90511B6B778600FE61AD /* HGLocationSearch */ = {
 			isa = PBXGroup;
 			children = (
-				50ED4C641B6A22720096B30B /* HGLocationSearchViewController.h */,
-				50ED4C651B6A22720096B30B /* HGLocationSearchViewController.m */,
-				507E8F1C1B6B16D400FE61AD /* HGLocationSearchViewModel.h */,
-				507E8F1D1B6B16D400FE61AD /* HGLocationSearchViewModel.m */,
+				507E90521B6B778600FE61AD /* HGLocationSearchViewController.h */,
+				507E90531B6B778600FE61AD /* HGLocationSearchViewController.m */,
+				507E90541B6B778600FE61AD /* HGLocationSearchViewModel.h */,
+				507E90551B6B778600FE61AD /* HGLocationSearchViewModel.m */,
+				507E90561B6B778600FE61AD /* HGLocationSearch.bundle */,
 			);
-			name = HGLocationSearch;
-			sourceTree = "<group>";
+			path = HGLocationSearch;
+			sourceTree = SOURCE_ROOT;
 		};
 		50ED4C0C1B6A20C00096B30B = {
 			isa = PBXGroup;
@@ -121,15 +124,15 @@
 		50ED4C171B6A20C00096B30B /* LocationSearch */ = {
 			isa = PBXGroup;
 			children = (
+				507E90511B6B778600FE61AD /* HGLocationSearch */,
 				50ED4C1C1B6A20C00096B30B /* AppDelegate.h */,
 				50ED4C1D1B6A20C00096B30B /* AppDelegate.m */,
-				50ED4C221B6A20C00096B30B /* Main.storyboard */,
-				50ED4C251B6A20C00096B30B /* Images.xcassets */,
-				50ED4C271B6A20C00096B30B /* LaunchScreen.xib */,
-				50ED4C181B6A20C00096B30B /* Supporting Files */,
-				507E90501B6B5BBD00FE61AD /* HGLocationSearch */,
 				507E904D1B6B5B1C00FE61AD /* ViewController.h */,
 				507E904E1B6B5B1C00FE61AD /* ViewController.m */,
+				50ED4C221B6A20C00096B30B /* Main.storyboard */,
+				50ED4C271B6A20C00096B30B /* LaunchScreen.xib */,
+				50ED4C251B6A20C00096B30B /* Images.xcassets */,
+				50ED4C181B6A20C00096B30B /* Supporting Files */,
 			);
 			path = LocationSearch;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				50ED4C241B6A20C00096B30B /* Main.storyboard in Resources */,
 				50ED4C291B6A20C00096B30B /* LaunchScreen.xib in Resources */,
 				50ED4C261B6A20C00096B30B /* Images.xcassets in Resources */,
+				507E90591B6B778600FE61AD /* HGLocationSearch.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,10 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50ED4C661B6A22720096B30B /* HGLocationSearchViewController.m in Sources */,
+				507E90571B6B778600FE61AD /* HGLocationSearchViewController.m in Sources */,
 				50ED4C1E1B6A20C00096B30B /* AppDelegate.m in Sources */,
 				50ED4C1B1B6A20C00096B30B /* main.m in Sources */,
-				507E8F1E1B6B16D400FE61AD /* HGLocationSearchViewModel.m in Sources */,
+				507E90581B6B778600FE61AD /* HGLocationSearchViewModel.m in Sources */,
 				507E904F1B6B5B1C00FE61AD /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
