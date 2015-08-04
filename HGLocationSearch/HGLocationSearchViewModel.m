@@ -87,19 +87,6 @@
     }];
 }
 
-- (NSArray *)stringsForCurrentLocation {
-    MKMapItem *item = [MKMapItem mapItemForCurrentLocation];
-    id name = [self titleForItem:item];
-    id address = [self addressForItem:item];
-    if (name == nil) {
-        name = [NSNull null];
-    }
-    if (address == nil) {
-        address = [NSNull null];
-    }
-    return @[name, address ];
-}
-
 - (NSArray *)stringsForItem:(MKMapItem *)item {
     id name = [self titleForItem:item];
     id address = [self addressForItem:item];
