@@ -6,13 +6,15 @@
 //  Copyright (c) 2015 FanAppz. All rights reserved.
 //
 
-#import "HGLocationSearchViewModel.h"
-#import <MapKit/MapKit.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import "HGLocationSearchViewModel.h"
 
-@interface HGLocationSearchViewModel() {
+@interface HGLocationSearchViewModel()<CLLocationManagerDelegate> {
     MKLocalSearch *_search;
 }
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 @implementation HGLocationSearchViewModel
@@ -26,8 +28,41 @@
         id searchReusltsChangedSignal = RACObserve(self, searchResults);
         
         self.dataChangeSignal = [RACSignal merge:@[searchTextSignal, currentAddressSignal, searchReusltsChangedSignal]];
+        
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+            [self.locationManager requestWhenInUseAuthorization];
+        
+        [self.locationManager startUpdatingLocation];
     }
     return self;
+}
+
+#pragma mark - Delegate
+#pragma makr CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    id currentLocation = [locations objectAtIndex:0];
+    [self.locationManager stopUpdatingLocation];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         if (!(error))
+         {
+             CLPlacemark *placemark = [placemarks objectAtIndex:0];
+             self.currentName = placemark.name;
+             
+             NSString *address = ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO);
+             address = [[address componentsSeparatedByString:@"\n"] lastObject];
+             self.currentAddress = address;
+         }
+         else
+         {
+             self.currentName = @"";
+             self.currentAddress = @"";
+         }
+     }];
 }
 
 #pragma mark - Private

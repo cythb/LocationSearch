@@ -14,15 +14,16 @@
 
 @property (strong, nonatomic) NSString *searchText;
 // current
-@property (strong, nonatomic) id currentLocation;
 @property (strong, nonatomic) NSString *currentAddress;
+@property (strong, nonatomic) NSString *currentName;
+@property (assign, nonatomic) BOOL reversing;
 @property (strong, nonatomic) NSArray *searchResults;
 
 // table data
 - (NSInteger)sectionCount;
 - (NSInteger)rowCountInSection:(NSInteger)section;
 - (NSArray *)stringsForItem:(MKMapItem *)item;
-- (NSArray *)stringsForCurrentLocation;
+//- (NSArray *)stringsForCurrentLocation;
 
 // signal
 @property (strong, nonatomic) RACSignal *dataChangeSignal;

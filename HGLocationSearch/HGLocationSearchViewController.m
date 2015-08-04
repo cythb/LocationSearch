@@ -75,6 +75,8 @@
     UILabel *_titleLabel;
 }
 
+@property (strong, nonatomic) UIActivityIndicatorView *indicator;
+
 @end
 
 @implementation HGLocationStaticCell : UITableViewCell
@@ -97,6 +99,14 @@
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(_titleLabel.superview.mas_centerY);
             make.leading.equalTo(_titleLabel.superview.mas_leading).with.offset(45);
+        }];
+        
+        self.indicator = [[UIActivityIndicatorView alloc] init];
+        self.indicator.hidesWhenStopped = YES;
+        [self.contentView addSubview:self.indicator];
+        [self.indicator mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(_titleLabel.mas_centerY);
+            make.leading.equalTo(_titleLabel.mas_trailing).with.offset(8);
         }];
     }
     return self;
@@ -181,6 +191,12 @@ UISearchBarDelegate>{
                                                                           target:self
                                                                           action:@selector(onClickedCancelItem)];
     self.navigationItem.rightBarButtonItem = item;
+    
+    //监听数据
+    [RACObserve(self.viewModel, reversing) subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Action
@@ -223,6 +239,11 @@ UISearchBarDelegate>{
         }else {
             HGLocationStaticCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HGLocationStaticCell"];
             cell.type = HGLocationStaticCellTypeCurrent;
+            if (self.viewModel.reversing) {
+                [cell.indicator startAnimating];
+            }else {
+                [cell.indicator stopAnimating];
+            }
             return cell;
         }
     }else {
@@ -270,7 +291,17 @@ UISearchBarDelegate>{
         if (indexPath.row == 0 && [self.viewModel rowCountInSection:0]==2) {
             nameAndAddress = @[self.viewModel.searchText, [NSNull null]];
         }else {
-            nameAndAddress = [self.viewModel stringsForCurrentLocation];
+            // 正在解析地址，当前位置不可用
+            if (self.viewModel.reversing) {
+                return;
+            }
+            
+            if (self.viewModel.currentName) {
+                name = self.viewModel.currentName;
+            }
+            if (self.viewModel.currentAddress ) {
+                address = self.viewModel.currentAddress;
+            }
         }
     }else {
         nameAndAddress = [self.viewModel stringsForItem:self.viewModel.searchResults[indexPath.row]];
