@@ -45,6 +45,7 @@
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_titleLabel.superview.mas_top).with.offset(8);
             make.leading.equalTo(_titleLabel.superview.mas_leading).with.offset(45);
+            make.trailing.equalTo(_titleLabel.superview.mas_trailing).with.offset(-8);
         }];
         
         _addressLabel = [[UILabel alloc] init];
@@ -53,6 +54,7 @@
         [_addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(_addressLabel.superview.mas_bottom).with.offset(-4);
             make.leading.equalTo(_addressLabel.superview.mas_leading).with.offset(45);
+            make.trailing.equalTo(_addressLabel.superview.mas_trailing).with.offset(-8);
         }];
     }
     return self;

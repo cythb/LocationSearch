@@ -54,7 +54,8 @@
              self.currentName = placemark.name;
              
              NSString *address = ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO);
-             address = [[address componentsSeparatedByString:@"\n"] lastObject];
+             address = [address stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+//             address = [[address componentsSeparatedByString:@"\n"] lastObject];
              self.currentAddress = address;
          }
          else
@@ -68,8 +69,8 @@
 #pragma mark - Private
 - (NSString *)addressForItem:(MKMapItem *)item {
     NSString *address = ABCreateStringWithAddressDictionary(item.placemark.addressDictionary, NO);
-    //    return [address stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-    return [[address componentsSeparatedByString:@"\n"] lastObject];
+    return [address stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+//    return [[address componentsSeparatedByString:@"\n"] lastObject];
 }
 
 - (NSString *)titleForItem:(MKMapItem *)item {
